@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9591AA73209D4A11003618E0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9591AA72209D4A11003618E0 /* main.cpp */; };
+		B5F0AFA63CB468A10D97E18F /* libPods-hack-wescam.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D22D99CB3B93CE0190C840A1 /* libPods-hack-wescam.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		360D9C3B0BF0B33CA0DD3E00 /* Pods-hack-wescam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack-wescam.release.xcconfig"; path = "Pods/Target Support Files/Pods-hack-wescam/Pods-hack-wescam.release.xcconfig"; sourceTree = "<group>"; };
 		9591AA6F209D4A11003618E0 /* hack-wescam */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "hack-wescam"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9591AA72209D4A11003618E0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D22D99CB3B93CE0190C840A1 /* libPods-hack-wescam.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hack-wescam.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D2515C403B5D7041CF9B46 /* Pods-hack-wescam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack-wescam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hack-wescam/Pods-hack-wescam.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F0AFA63CB468A10D97E18F /* libPods-hack-wescam.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +48,8 @@
 			children = (
 				9591AA71209D4A11003618E0 /* hack-wescam */,
 				9591AA70209D4A11003618E0 /* Products */,
+				E53A6BBD1A5C728E1265C029 /* Pods */,
+				ABE19B937337B64BBBB965D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +69,23 @@
 			path = "hack-wescam";
 			sourceTree = "<group>";
 		};
+		ABE19B937337B64BBBB965D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D22D99CB3B93CE0190C840A1 /* libPods-hack-wescam.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E53A6BBD1A5C728E1265C029 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2515C403B5D7041CF9B46 /* Pods-hack-wescam.debug.xcconfig */,
+				360D9C3B0BF0B33CA0DD3E00 /* Pods-hack-wescam.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -69,9 +93,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9591AA76209D4A11003618E0 /* Build configuration list for PBXNativeTarget "hack-wescam" */;
 			buildPhases = (
+				EB3CC19D2DBB6206D3E84107 /* [CP] Check Pods Manifest.lock */,
 				9591AA6B209D4A11003618E0 /* Sources */,
 				9591AA6C209D4A11003618E0 /* Frameworks */,
 				9591AA6D209D4A11003618E0 /* CopyFiles */,
+				D857F0001422B804E6D18CFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -112,6 +138,42 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D857F0001422B804E6D18CFA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hack-wescam/Pods-hack-wescam-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB3CC19D2DBB6206D3E84107 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hack-wescam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9591AA6B209D4A11003618E0 /* Sources */ = {
@@ -236,6 +298,7 @@
 		};
 		9591AA77209D4A11003618E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3D2515C403B5D7041CF9B46 /* Pods-hack-wescam.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4RKG6EKL9;
@@ -245,6 +308,7 @@
 		};
 		9591AA78209D4A11003618E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 360D9C3B0BF0B33CA0DD3E00 /* Pods-hack-wescam.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4RKG6EKL9;
