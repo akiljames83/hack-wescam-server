@@ -7,14 +7,21 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  console.log('a user connected');
+  console.log('device connected');
   socket.on('disconnect', function(){
-    console.log('user disconnected');
+    console.log('device disconnected');
   });
 });
-   
+    
+io.on('connection', function(socket){
+
+  socket.on('sendMatrix', function(obj) {
+    //io.emit('add', obj);
+
+    console.log(obj)
+  });
+});
 
 http.listen(3000, function(){
   console.log('listening on *:3000');
 });
-    
