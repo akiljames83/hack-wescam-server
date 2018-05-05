@@ -6,10 +6,13 @@
 //  Copyright © 2018 Igor Grishchenko. All rights reserved.
 //
 
-#include <iostream>
+#include "face_detector.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
+    
+    FaceDetector *faceDetector = new FaceDetector();
+    faceDetector->Pipeline();
+    
     return 0;
 }

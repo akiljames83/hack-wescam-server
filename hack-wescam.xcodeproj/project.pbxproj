@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9591AA73209D4A11003618E0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9591AA72209D4A11003618E0 /* main.cpp */; };
+		9591AA7B209D4BEE003618E0 /* face_detector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9591AA79209D4BEE003618E0 /* face_detector.cpp */; };
 		B5F0AFA63CB468A10D97E18F /* libPods-hack-wescam.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D22D99CB3B93CE0190C840A1 /* libPods-hack-wescam.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		360D9C3B0BF0B33CA0DD3E00 /* Pods-hack-wescam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack-wescam.release.xcconfig"; path = "Pods/Target Support Files/Pods-hack-wescam/Pods-hack-wescam.release.xcconfig"; sourceTree = "<group>"; };
 		9591AA6F209D4A11003618E0 /* hack-wescam */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "hack-wescam"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9591AA72209D4A11003618E0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9591AA79209D4BEE003618E0 /* face_detector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = face_detector.cpp; sourceTree = "<group>"; };
+		9591AA7A209D4BEE003618E0 /* face_detector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = face_detector.hpp; sourceTree = "<group>"; };
 		D22D99CB3B93CE0190C840A1 /* libPods-hack-wescam.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hack-wescam.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D2515C403B5D7041CF9B46 /* Pods-hack-wescam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack-wescam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hack-wescam/Pods-hack-wescam.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				9591AA72209D4A11003618E0 /* main.cpp */,
+				9591AA79209D4BEE003618E0 /* face_detector.cpp */,
+				9591AA7A209D4BEE003618E0 /* face_detector.hpp */,
 			);
 			path = "hack-wescam";
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9591AA7B209D4BEE003618E0 /* face_detector.cpp in Sources */,
 				9591AA73209D4A11003618E0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
