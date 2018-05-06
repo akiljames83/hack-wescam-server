@@ -250,9 +250,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
             List<Classifier.Recognition> a = results;
             List<Classifier.Recognition> b = results2;
-			List<Classifier.Recognition> c = a.firs
-            c.add(a.get(0));
-			c.add(b.get(0));
             cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
             resultsView.setResults(a);
             requestRender();
