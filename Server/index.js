@@ -1,26 +1,15 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var PythonShell = require('python-shell');
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////// NEW STUFF ////////////////////////////////////////////////////////
-var PythonShell = require('python-shell'); // need to require this package
-var pyshell = new PythonShell('script.py'); // create a pyshell object to run your script, im not sure if this takes inputs tho, still looking
-// into it
-pyshell.send('2');
-
-pyshell.on('message', function (message) {  
-  // received a message sent from the Python script (a simple "print" statement)
-  console.log(message); // prints to server shell whatever would have been printed on idle shell
-});
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// create a pyshell object to run your script, im not sure if this takes inputs tho, still looking
+var pyshell = new PythonShell('mat_to_image.py'); 
 
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');;
 });
-
-// app.get('/script', run_python())
 
 
 io.on('connection', function(socket){
@@ -30,17 +19,23 @@ io.on('connection', function(socket){
   });
 });
     
+pyshell.on('message', function (message) {  
+  // received a message sent from the Python script (a simple "print" statement)
+  console.log(message); // prints to server shell whatever would have been printed on idle shell
+});
+
 io.on('connection', function(socket){
 
   socket.on('sendMatrix', function(obj) {
-    //io.emit('add', obj);
 
-    console.log(obj)
+    PythonShell.run('mat_to_image.py', {args: [obj]}, function (err, results) {
+
+      if (err) throw err;
+    });
   });
 });
 
 
-
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(8888, function(){
+  console.log('listening on *:8888');
 });
