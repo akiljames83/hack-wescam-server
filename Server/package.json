@@ -1,6 +1,26 @@
 {
-  "name": "socket-chat-example",
-  "version": "0.0.1",
-  "description": "my first socket.io app",
-  "dependencies": {}
+  "name": "wescam-hack",
+  "version": "1.0.0",
+  "description": "Socket Application for gender analysis and person detection software",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.17.4",
+    "python-shell": "^0.5.0",
+    "socket.io": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devgrishchenko/hack-wescam.git"
+  },
+  "author": "Akil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devgrishchenko/hack-wescam/issues"
+  },
+  "homepage": "https://github.com/devgrishchenko/hack-wescam#readme"
 }
