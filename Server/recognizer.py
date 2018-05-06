@@ -2,26 +2,28 @@ import numpy as np
 import dlib
 from skimage import io
 from scipy.spatial import distance
+from libs import *
 
-sp = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
-facerec = dlib.face_recognition_model_v1('dlib_face_recognition_resnet_model_v1.dat')
-detector = dlib.get_frontal_face_detector()
 
-img = io.imread('result.jpg')
-dets = detector(img, 1)
+try:
 
-for k, d in enumerate(dets):
-    shape = sp(img, d)
+    img = io.imread('result.jpg')
+    dets = detector(img, 1)
 
-face_descriptor1 = facerec.compute_face_descriptor(img, shape)
+    for k, d in enumerate(dets):
+        shape = sp(img, d)
 
-img2 = io.imread('detect.jpg')
+    face_descriptor1 = facerec.compute_face_descriptor(img, shape)
 
-dets_webcam = detector(img2, 1)
-for k, d in enumerate(dets_webcam):
-    shape2 = sp(img2, d)
+    img2 = io.imread('detect.jpg')
 
-face_descriptor2 = facerec.compute_face_descriptor(img2, shape2)
+    dets_webcam = detector(img2, 1)
+    for k, d in enumerate(dets_webcam):
+        shape2 = sp(img2, d)
 
-a = distance.euclidean(face_descriptor1, face_descriptor2)
-print(a)
+    face_descriptor2 = facerec.compute_face_descriptor(img2, shape2)
+
+    print(distance.euclidean(face_descriptor1, face_descriptor2))
+
+except:
+    pass

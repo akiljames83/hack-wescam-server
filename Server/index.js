@@ -32,6 +32,13 @@ io.on('connection', function(socket){
 
       if (err) throw err;
     });
+    
+    PythonShell.run('recognizer.py', {}, function (err, results) {
+
+      if (err) throw err;
+
+      console.log(results);
+    });
   });
 });
 
